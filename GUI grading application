@@ -1,0 +1,352 @@
+package sdmcet.cse.oop;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.Border;
+
+class GUIExplorer extends JFrame implements ActionListener {
+
+	JLabel l, l1, l2, l3, l4, l5, l6, l7, l8, l9;
+	JTextField t1, t2, t3, t4, t5, t6;
+	JPanel p, p1, p2, p3, p4, p5, p6, p7, p8, q;
+	JButton b;
+	Border border1 = BorderFactory.createLineBorder(new Color(199, 199, 199), 1);
+
+	GUIExplorer(String title) {
+		super(title);
+
+		// CREATION OF PANEL P
+		p = new JPanel();
+		q = new JPanel();
+
+		// ADDING BACKGROUND COLOR TO THE PANEL P
+		p.setBackground(new Color(205, 203, 203));
+
+		// ADDING BOUNDS TO THE PANEL P
+		p.setBounds(50, 20, 500, 55);
+
+		// SETTING THE BORDER FOR THE PANEL
+		p.setBorder(border1);
+
+		// CREATION OF NEW LABEL
+		l = new JLabel("GRADE CALCULATOR");
+
+		// SETTING THE BORDER FOR THE LABEL
+		l.setBorder(border1);
+
+		// SETTING COLOR TO THE TEXT
+		l.setForeground(new Color(104, 100, 100));
+
+		// SETTING THE FONT SIZE AND STYLE
+		l.setFont(new Font("c", Font.PLAIN, 27));
+
+		// ADDING LABEL TO THE PANEL
+		p.add(l);
+		q.add(p);
+
+		// CREATION OF PANEL P1
+		p1 = new JPanel();
+		p1.setBackground(new Color(212, 211, 211));
+		p1.setBounds(50, 80, 500, 50);
+		p1.setBorder(border1);
+		l1 = new JLabel("Enter IA1 Marks    : ");
+		l1.setForeground(new Color(104, 100, 100));
+		l1.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p1.add(l1);
+		t1 = new JTextField(5);
+		t1.setPreferredSize(new Dimension(150, 25));
+		t1.setBorder(border1);
+		p1.add(t1);
+
+		// CREATION OF P2
+		p2 = new JPanel();
+		p2.setBackground(new Color(244, 241, 243));
+		p2.setBounds(50, 130, 500, 50);
+		p2.setBorder(border1);
+		l2 = new JLabel("Enter IA2 Marks    : ");
+		l2.setForeground(new Color(104, 100, 100));
+		l2.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p2.add(l2);
+		t2 = new JTextField(5);
+		t2.setBorder(border1);
+		t2.setPreferredSize(new Dimension(150, 25));
+		p2.add(t2);
+
+		// CRETION OF PANEL P3
+		p3 = new JPanel();
+		p3.setBackground(new Color(212, 211, 211));
+		p3.setBounds(50, 180, 500, 50);
+		p3.setBorder(border1);
+		l3 = new JLabel("Enter IA3 Marks     : ");
+		l3.setForeground(new Color(104, 100, 100));
+		l3.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p3.add(l3);
+		t3 = new JTextField(5);
+		t3.setBorder(border1);
+		t3.setPreferredSize(new Dimension(150, 25));
+		p3.add(t3);
+
+		// CREATION OF PANEL P4
+		p4 = new JPanel();
+		p4.setBackground(new Color(244, 241, 243));
+		p4.setBounds(50, 230, 500, 50);
+		p4.setBorder(border1);
+		l4 = new JLabel("Enter CTA Marks    : ");
+		l4.setForeground(new Color(104, 100, 100));
+		l4.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p4.add(l4);
+		t4 = new JTextField(5);
+		t4.setBorder(border1);
+		t4.setPreferredSize(new Dimension(150, 25));
+		p4.add(t4);
+
+		// CREATION OF PANEL P5
+		p5 = new JPanel();
+		p5.setBackground(new Color(212, 211, 211));
+		p5.setBounds(50, 280, 500, 50);
+		p5.setBorder(border1);
+		l5 = new JLabel("Enter SEE Marks    : ");
+		l5.setForeground(new Color(104, 100, 100));
+		l5.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p5.add(l5);
+		t5 = new JTextField(5);
+		t5.setBorder(border1);
+		t5.setPreferredSize(new Dimension(150, 25));
+		p5.add(t5);
+
+		// CREATION OF BUTTON IN PANEL P6
+		p6 = new JPanel();
+		p6.setBackground(new Color(244, 241, 243));
+		p6.setBounds(50, 330, 500, 50);
+		p6.setBorder(border1);
+		b = new JButton("CALCULATE");
+		b.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+
+		// SETTING THE SIZE TO THE BUTTON
+		b.setPreferredSize(new Dimension(150, 35));
+
+		b.setForeground(new Color(104, 100, 100));
+
+		// IT REMOVES THE SMALL BORDER WHICH IS PRESENT AROUND THE TEXT
+		b.setFocusable(false);
+		p6.add(b);
+
+		// TO MAKE THE BUTTON INTERACTIVE
+		b.addActionListener(this);
+
+		// CRAERTES A PANEL P7 AND DISPLAYS TOTAL MARKS
+		p7 = new JPanel();
+		p7.setBackground(new Color(212, 211, 211));
+		p7.setBounds(50, 380, 500, 50);
+		p7.setBorder(border1);
+		l7 = new JLabel();
+		l7.setForeground(new Color(104, 100, 100));
+		l7.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p7.add(l7);
+
+		// CRAERTES A PANEL P8 AND DISPLAYS GRADE
+		p8 = new JPanel();
+		p8.setBackground(new Color(244, 241, 243));
+		p8.setBounds(50, 430, 500, 50);
+		p8.setBorder(border1);
+		l8 = new JLabel();
+		l8.setForeground(new Color(104, 100, 100));
+		l8.setFont(new Font("MONO SPACE", Font.PLAIN, 16));
+		p8.add(l8);
+
+		// ADDING PANELS TO THE FRAME
+		this.add(p);
+		this.add(p1);
+		this.add(p2);
+		this.add(p3);
+		this.add(p4);
+		this.add(p5);
+		this.add(p6);
+		this.add(p7);
+		this.add(p8);
+		this.add(q);
+
+	} // END OF THE CONSTRUCTOR
+
+	// INSTANCE VARIABLES
+	double ia1;
+	double ia2;
+	double ia3;
+	double cta;
+	double see;
+
+	// CALCULATION OF CIE MARKS
+	double CIECalculate() {
+
+		// CONVETING STRING TO DOUBLE
+		ia1 = Double.parseDouble(t1.getText());
+		ia2 = Double.parseDouble(t2.getText());
+		ia3 = Double.parseDouble(t3.getText());
+		cta = Double.parseDouble(t4.getText());
+		see = Double.parseDouble(t5.getText());
+		double cie;
+
+		// ceil IS USED TO FIND THE SMALLEST INTEGER VALUE
+		ia1 = Math.ceil(ia1);
+		ia2 = Math.ceil(ia2);
+		ia3 = Math.ceil(ia3);
+		cta = Math.ceil(cta);
+		see = Math.ceil(see);
+
+		// CUSTOM EXCEPTION HANDLING
+		try {
+			if ((ia1 < 0 || ia1 > 20) || (ia2 < 0 || ia2 > 20) || (ia3 < 0 || ia3 > 20)) {
+				throw new IAException();
+			} else if (cta < 0 || cta > 10) {
+				throw new CTAException();
+			} else if (see < 0 || see > 100) {
+				throw new SEEException();
+			}
+		} catch (IAException iae) {
+			JOptionPane.showMessageDialog(null, "EXCEPTION : " + iae);
+			System.exit(EXIT_ON_CLOSE);
+		} catch (CTAException ctae) {
+			JOptionPane.showMessageDialog(null, "EXCEPTION : " + ctae);
+			System.exit(EXIT_ON_CLOSE);
+		} catch (SEEException see) {
+			JOptionPane.showMessageDialog(null, "EXCEPTION : " + see);
+			System.exit(EXIT_ON_CLOSE);
+		}
+
+		// BRANCH STATEMENTS FOR CALCULATING BEST OF 2 IA's
+		if (ia1 >= ia2 && ia3 >= ia2) {
+			cie = ia1 + ia3 + cta;
+		}
+
+		else if (ia1 >= ia3 && ia2 >= ia3) {
+			cie = ia1 + ia2 + cta;
+		}
+
+		else {
+			cie = ia2 + ia3 + cta;
+		}
+
+		return cie;
+	}// END OF CIECalculate() METHOD
+
+	// CALCULATION OF THE TOTALMARKS
+	private double totmarkCalculator() {
+
+		double tot_marks;
+		double cie = CIECalculate();
+
+		// this if is used t convert 38 or 39 to 40
+		if (see == 38 || see == 39) {
+			see = 40;
+		}
+
+		double reduce_see = (see / 2);
+
+		// to round of the double number to its next integer number
+		reduce_see = Math.ceil(reduce_see);
+
+		// CALCULATION OF TOTAL MARKS
+		tot_marks = cie + reduce_see;
+
+		return tot_marks;
+	}
+
+	// CALCULATION OF GRADE BASED ON TOTAL MARKS SCORED
+	String GradeCalculator() {
+
+		double tot_marks = totmarkCalculator();
+		String grade;
+
+		// BRANCHING STATEMENTS TO GIVE THE GRADE BASED ON TOTAL MARKS CALCULATED
+		if (tot_marks >= 90 && tot_marks <= 100) {
+			grade = "S";
+		}
+
+		else if (tot_marks >= 80 && tot_marks <= 89) {
+			grade = "A";
+		}
+
+		else if (tot_marks >= 70 && tot_marks <= 79) {
+			grade = "B";
+		}
+
+		else if (tot_marks >= 60 && tot_marks <= 69) {
+			grade = "C";
+		}
+
+		else if (tot_marks >= 50 && tot_marks <= 59) {
+			grade = "D";
+		}
+
+		else if (tot_marks >= 40 && tot_marks <= 49) {
+			grade = "E";
+		}
+
+		else {
+			grade = "F";
+		}
+
+		return grade;
+	}// END OF THE GradeCalculator() METHOD
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+			double cie = CIECalculate();
+
+			// PRINTS SOME STATEMENTS IF CIE IS LESS THN 20
+			if (cie < 20) {
+				l8.setText("You are detained from taking SEE ");
+			}
+			// PRINTS SOME STATEMENTS IF SEE MARKS ARE LESS THAN 38
+			else if (see < 38) {
+				l8.setText("Your grade is F");
+			}
+			// PRINTS THE TOTAL MARKS AND GRADE IN THE RESPECTIVE LABELS
+			else {
+				l7.setText("Your total score is : " + totmarkCalculator());
+				l8.setText("You got " + GradeCalculator() + " grade ");
+			}
+		} catch (NumberFormatException nfe) {
+			JOptionPane.showMessageDialog(this, "Error : Please enter the marks !");
+		}
+
+	}
+}
+
+class IAException extends Exception {
+	public String toString() {
+		return "IA marks should be in between 0-20";
+	}
+}
+
+class CTAException extends Exception {
+	public String toString() {
+		return "CTA marks should be in between 0-10";
+	}
+}
+
+class SEEException extends Exception {
+	public String toString() {
+		return "SEE marks should be in between 0-100";
+	}
+}
+
+public class GUIExplorerDemo {
+
+	public static void main(String[] args) {
+		// NAME OF THE FRAME, DMD FEATURE IS USED
+		JFrame f = new GUIExplorer("STUDENT GRADING SYSTEM");
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// RESIZING THE WINDOW IS NOT POSSIBLE
+		f.setResizable(false);
+
+		// SETTING THE BOUNDS TO THE WINDOW
+		f.setBounds(500, 150, 600, 550);
+
+		// SETTING VISIBILITY OF THE WINDOW
+		f.setVisible(true);
+	}
+}
